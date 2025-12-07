@@ -12,6 +12,7 @@ interface BlogPostProps {
   onSelectService?: (id: string) => void;
   onSelectCondition?: (id: string) => void;
   onContactClick?: () => void;
+  onBlogClick?: () => void;
 }
 
 // ----------------------------------------------------------------------
@@ -118,7 +119,8 @@ const BlogPostView: React.FC<BlogPostProps> = ({
   onOpenFees,
   onSelectService,
   onSelectCondition,
-  onContactClick
+  onContactClick,
+  onBlogClick
 }) => {
   const { openBooking } = useBooking();
 
@@ -160,6 +162,8 @@ const BlogPostView: React.FC<BlogPostProps> = ({
         onSelectService={onSelectService}
         onSelectCondition={onSelectCondition}
         onContactClick={onContactClick}
+        onBlogClick={onBlogClick}
+        variant="overlay"
       />
 
       {/* Article Hero */}

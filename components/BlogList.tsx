@@ -10,6 +10,7 @@ interface BlogListProps {
   onSelectService?: (id: string) => void;
   onSelectCondition?: (id: string) => void;
   onContactClick?: () => void;
+  onBlogClick?: () => void;
 }
 
 const BlogList: React.FC<BlogListProps> = ({ 
@@ -17,7 +18,8 @@ const BlogList: React.FC<BlogListProps> = ({
   onOpenFees,
   onSelectService,
   onSelectCondition,
-  onContactClick
+  onContactClick,
+  onBlogClick
 }) => {
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('All');
@@ -43,6 +45,8 @@ const BlogList: React.FC<BlogListProps> = ({
         onSelectService={onSelectService}
         onSelectCondition={onSelectCondition}
         onContactClick={onContactClick}
+        onBlogClick={onBlogClick}
+        variant="overlay"
       />
 
       {/* Hero Section */}

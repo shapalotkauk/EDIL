@@ -101,6 +101,7 @@ function App() {
              onSelectService={handleServiceSelect}
              onSelectCondition={handleConditionSelect}
              onContactClick={openContact}
+             onBlogClick={openBlog}
           />
         ) : isContactPageOpen ? (
           <ContactPage 
@@ -109,6 +110,7 @@ function App() {
              onSelectService={handleServiceSelect}
              onSelectCondition={handleConditionSelect}
              onContactClick={openContact}
+             onBlogClick={openBlog}
           />
         ) : isBlogListOpen ? (
           <BlogList 
@@ -117,6 +119,7 @@ function App() {
              onSelectService={handleServiceSelect}
              onSelectCondition={handleConditionSelect}
              onContactClick={openContact}
+             onBlogClick={openBlog}
           />
         ) : selectedBlogPostId ? (
           <BlogPostView 
@@ -126,6 +129,7 @@ function App() {
              onSelectService={handleServiceSelect}
              onSelectCondition={handleConditionSelect}
              onContactClick={openContact}
+             onBlogClick={openBlog}
           />
         ) : selectedServiceId ? (
           <ServiceDetailView 
@@ -134,6 +138,8 @@ function App() {
             onOpenFees={openFees}
             onSelectService={handleServiceSelect}
             onSelectCondition={handleConditionSelect}
+            onContactClick={openContact}
+            onBlogClick={openBlog}
           />
         ) : selectedConditionId ? (
           <ConditionDetailView 
@@ -142,6 +148,8 @@ function App() {
             onOpenFees={openFees}
             onSelectService={handleServiceSelect}
             onSelectCondition={handleConditionSelect}
+            onContactClick={openContact}
+            onBlogClick={openBlog}
           />
         ) : (
           <>

@@ -49,204 +49,6 @@ const beforeAfterImages = {
   ]
 };
 
-const conditionData: Record<string, ConditionDetail> = {
-  'c1': {
-    id: 'c1',
-    title: 'Dental Trauma',
-    heroImage: "https://images.unsplash.com/photo-1606811971618-4486d14f3f72?auto=format&fit=crop&w=1920&q=80",
-    content: (
-      <>
-        <p className="mb-4">
-          Dental trauma refers to any injury to the teeth, gums, or nearby soft tissues. These injuries can range from minor chips to severe fractures or completely knocked-out teeth (avulsion). 
-        </p>
-        <p className="mb-4">
-          The speed at which you seek treatment for dental trauma significantly impacts the long-term prognosis of the tooth. For instance, a knocked-out tooth has the highest chance of being successfully reimplanted if seen by a dentist within 60 minutes.
-        </p>
-        <h3 className="text-xl font-bold text-slate-900 mt-6 mb-3">Types of Trauma We Treat</h3>
-        <ul className="list-disc pl-5 space-y-2 mb-6 text-slate-700">
-          <li><strong>Luxation:</strong> The tooth is still in the socket but in the wrong position.</li>
-          <li><strong>Avulsion:</strong> The tooth has been completely knocked out.</li>
-          <li><strong>Root Fracture:</strong> A crack extending into the root.</li>
-          <li><strong>Soft Tissue Injury:</strong> Lacerations to the gums or lips.</li>
-        </ul>
-      </>
-    ),
-    pricing: [
-      { item: "Emergency Assessment", price: "£30 (New Patient Offer)" },
-      { item: "Splinting (Stabilizing loose teeth)", price: "from £150" },
-      { item: "Re-implantation of Avulsed Tooth", price: "from £250" },
-      { item: "Root Canal Treatment", price: "from £247.50*" }
-    ],
-    beforeAfter: beforeAfterImages.trauma,
-    seo: {
-        title: "Emergency Dental Trauma Treatment London | Knocked Out Tooth",
-        description: "Urgent care for dental trauma in Central London. We treat knocked-out teeth, fractures, and soft tissue injuries. Same-day appointments available.",
-        keywords: "dental trauma london, knocked out tooth, luxation treatment, emergency dentist south kensington, dental injury"
-    }
-  },
-  'c2': {
-    id: 'c2',
-    title: 'Severe Toothache',
-    heroImage: "https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=1920&q=80",
-    content: (
-      <>
-        <p className="mb-4">
-          A severe toothache is one of the most debilitating types of pain. It signals that something is wrong inside the tooth or gum. Unlike a headache, a toothache rarely resolves on its own and often worsens over time.
-        </p>
-        <h3 className="text-xl font-bold text-slate-900 mt-6 mb-3">Common Causes</h3>
-        <ul className="list-disc pl-5 space-y-2 mb-6 text-slate-700">
-          <li><strong>Deep Decay:</strong> Bacteria reaching the nerve.</li>
-          <li><strong>Abscess:</strong> Infection at the root tip.</li>
-          <li><strong>Fracture:</strong> A crack allowing bacteria in.</li>
-        </ul>
-        <p className="mb-4">
-          Our primary goal is immediate pain relief. We will perform a thorough examination to diagnose the source and treat it immediately.
-        </p>
-      </>
-    ),
-    pricing: [
-      { item: "Emergency Assessment", price: "£30 (New Patient Offer)" },
-      { item: "Emergency Pain Relief Dressing", price: "from £75" },
-      { item: "Root Canal Extirpation (Stage 1)", price: "from £247.50*" },
-      { item: "Simple Extraction", price: "from £125*" }
-    ],
-    beforeAfter: beforeAfterImages.toothache,
-    seo: {
-        title: "Severe Toothache Relief London | Emergency Dentist South Kensington",
-        description: "Suffering from severe toothache? Get immediate pain relief and diagnosis at our Central London clinic. Same-day appointments. Open weekends.",
-        keywords: "severe toothache relief, tooth pain london, emergency root canal, toothache remedy, urgent dentist london"
-    }
-  },
-  'c3': {
-    id: 'c3',
-    title: 'Swollen Gums & Abscesses',
-    heroImage: "https://images.unsplash.com/photo-1628177142898-93e36e4e3a50?auto=format&fit=crop&w=1920&q=80",
-    content: (
-      <>
-        <p className="mb-4">
-          Swollen gums or facial swelling are serious indicators of an underlying infection, often a dental abscess. An abscess is a collection of pus caused by bacterial infection.
-        </p>
-        <h3 className="text-xl font-bold text-slate-900 mt-6 mb-3">Signs of a Dental Abscess</h3>
-        <p className="mb-4">
-          Symptoms often include severe, persistent toothache, sensitivity to hot and cold, fever, and facial swelling. Facial swelling can be dangerous if it spreads.
-        </p>
-        <h3 className="text-xl font-bold text-slate-900 mt-6 mb-3">Emergency Treatment</h3>
-        <p className="mb-4">
-          We prioritize these cases. Treatment may include draining the abscess, root canal therapy, or extraction to remove the source of infection.
-        </p>
-      </>
-    ),
-    pricing: [
-      { item: "Emergency Assessment", price: "£30 (New Patient Offer)" },
-      { item: "Abscess Drainage", price: "from £150" },
-      { item: "Root Canal Treatment", price: "from £247.50*" },
-      { item: "Surgical Extraction", price: "from £325*" }
-    ],
-    beforeAfter: beforeAfterImages.gum,
-    seo: {
-        title: "Dental Abscess & Swollen Gums Treatment London | Urgent Care",
-        description: "Emergency treatment for dental abscesses and facial swelling in London. Don't ignore infection. Book a same-day appointment for drainage and antibiotics.",
-        keywords: "dental abscess treatment, swollen gums london, facial swelling dentist, gum infection emergency, urgent dental care"
-    }
-  },
-  'c4': {
-    id: 'c4',
-    title: 'Crowns Fall Out',
-    heroImage: "https://images.unsplash.com/photo-1598256989337-1296b4859a2a?auto=format&fit=crop&w=1920&q=80",
-    content: (
-      <>
-        <p className="mb-4">
-          A lost crown or bridge can be distressing. It leaves the underlying tooth weak and sensitive. We advise against using household glues, as this can damage the tooth permanently.
-        </p>
-        <h3 className="text-xl font-bold text-slate-900 mt-6 mb-3">Our Solutions</h3>
-        <ul className="list-disc pl-5 space-y-2 mb-6 text-slate-700">
-          <li><strong>Re-cementation:</strong> If the crown and tooth are healthy, we can re-cement it permanently.</li>
-          <li><strong>New Crown:</strong> If the old crown is damaged, we can prepare the tooth for a new one.</li>
-        </ul>
-        <p className="mb-4">
-          We offer same-day re-cementation to restore your smile instantly.
-        </p>
-      </>
-    ),
-    pricing: [
-      { item: "Emergency Assessment", price: "£30 (New Patient Offer)" },
-      { item: "Re-cementing Crown", price: "from £75" },
-      { item: "New Porcelain Crown", price: "from £497.50*" },
-      { item: "Core Build-up", price: "from £150" }
-    ],
-    beforeAfter: beforeAfterImages.crown,
-    seo: {
-        title: "Lost Crown & Bridge Repair London | Emergency Recementation",
-        description: "Crown fell out? We offer same-day re-cementation and new crown fabrication in South Kensington. Restore your smile instantly.",
-        keywords: "crown fell out, recement crown london, lost filling emergency, bridge repair, emergency dentist london"
-    }
-  },
-  'c5': {
-    id: 'c5',
-    title: 'Broken Denture Repair',
-    heroImage: "https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=1920&q=80",
-    content: (
-      <>
-        <p className="mb-4">
-          A broken denture disrupts your ability to eat and speak. Whether it's a crack, a snapped tooth, or a loose fit, we can help.
-        </p>
-        <h3 className="text-xl font-bold text-slate-900 mt-6 mb-3">Same-Day Repairs</h3>
-        <p className="mb-4">
-           We work with specialized technicians to offer fast repair services for fractures, tooth replacements, and additions.
-        </p>
-        <p className="mb-4">
-          Please do not try to glue your denture back together. Superglue is toxic and ruins the alignment. Bring it to us for professional repair.
-        </p>
-      </>
-    ),
-    pricing: [
-      { item: "Emergency Assessment", price: "£30 (New Patient Offer)" },
-      { item: "Simple Denture Repair", price: "from £150" },
-      { item: "Addition of Tooth", price: "from £180" },
-      { item: "New Acrylic Denture", price: "from £397.50*" }
-    ],
-    beforeAfter: beforeAfterImages.denture,
-    seo: {
-        title: "Same-Day Broken Denture Repair London | Emergency Dental Lab",
-        description: "Fast broken denture repairs in Central London. We fix cracks, snapped teeth, and loose dentures while you wait or same-day.",
-        keywords: "broken denture repair london, fix dentures same day, denture fracture, emergency denture clinic, denture technician"
-    }
-  },
-  'c6': {
-    id: 'c6',
-    title: 'Dental Injury',
-    heroImage: "https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=1920&q=80",
-    content: (
-      <>
-        <p className="mb-4">
-          Dental injuries from sports or falls can affect teeth, jawbone, and soft tissues. Immediate assessment is vital to rule out fractures.
-        </p>
-        <h3 className="text-xl font-bold text-slate-900 mt-6 mb-3">Comprehensive Care</h3>
-        <ul className="list-disc pl-5 space-y-2 mb-6 text-slate-700">
-            <li><strong>Chipped Teeth:</strong> Repaired with composite bonding or crowns.</li>
-            <li><strong>Displaced Teeth:</strong> Repositioned and splinted.</li>
-            <li><strong>Soft Tissue Cuts:</strong> Sutures (stitches) provided where necessary.</li>
-        </ul>
-        <p className="mb-4">
-           We also provide X-rays to check for hidden root fractures or bone damage.
-        </p>
-      </>
-    ),
-    pricing: [
-      { item: "Emergency Assessment", price: "£30 (New Patient Offer)" },
-      { item: "Composite Bonding Repair", price: "from £197.50*" },
-      { item: "Suturing (Stitches)", price: "from £150" },
-      { item: "Custom Mouthguard", price: "£297.50*" }
-    ],
-    beforeAfter: beforeAfterImages.injury,
-    seo: {
-        title: "Emergency Dental Injury Treatment London | Sports Injury Dentist",
-        description: "Immediate care for dental injuries from sports or falls. We treat chipped teeth, lip cuts, and jaw trauma. X-rays and suturing available.",
-        keywords: "dental injury treatment, sports dentist london, chipped tooth repair, mouth trauma emergency, facial injury"
-    }
-  }
-};
-
 const UrgencyBanner: React.FC<{ openBooking: () => void }> = ({ openBooking }) => (
   <div className="my-10 bg-gradient-to-r from-red-50 to-white border-l-4 border-red-500 p-6 sm:p-8 rounded-r-2xl shadow-sm">
     <div className="flex flex-col md:flex-row items-center justify-between gap-6">
@@ -308,12 +110,161 @@ const BeforeAfterGallery: React.FC<{ images: { before: string; after: string; la
   </div>
 );
 
+const conditionData: Record<string, ConditionDetail> = {
+  'c1': {
+    id: 'c1',
+    title: 'Dental Trauma',
+    heroImage: "https://images.unsplash.com/photo-1606811971618-4486d14f3f72?auto=format&fit=crop&w=1920&q=80",
+    content: (
+      <>
+        <p><strong>Dental trauma</strong> refers to injury to the teeth and/or gums, and surrounding soft tissues. This can include knocked-out teeth (avulsion), dislodged teeth (luxation), or broken/fractured teeth.</p>
+        <p>Time is of the essence. If a tooth is knocked out, see us within 60 minutes for the best chance of saving it. Handle the tooth by the crown (top), not the root.</p>
+        <h3>Common Causes</h3>
+        <ul>
+          <li>Sports injuries (contact sports)</li>
+          <li>Falls or accidents</li>
+          <li>Biting down on hard objects</li>
+        </ul>
+      </>
+    ),
+    pricing: [
+      { item: "Emergency Exam", price: "£30" },
+      { item: "Splinting (per tooth)", price: "from £150" },
+      { item: "Composite Bonding", price: "from £197.50" },
+      { item: "Re-implantation", price: "from £250" },
+    ],
+    beforeAfter: beforeAfterImages.trauma,
+    seo: {
+      title: "Emergency Dental Trauma Treatment London | Knocked Out Tooth",
+      description: "Urgent care for dental trauma in London. Knocked out or broken teeth treated immediately. Call 020 3137 6356.",
+      keywords: "dental trauma london, knocked out tooth, broken tooth emergency, sports dental injury"
+    }
+  },
+  'c2': {
+    id: 'c2',
+    title: 'Severe Toothache',
+    heroImage: "https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=1920&q=80",
+    content: (
+      <>
+        <p>A severe, throbbing toothache is often a sign of irreversible pulpitis (dying nerve) or an abscess. It rarely resolves on its own and requires professional intervention to relieve the pressure and pain.</p>
+        <p>We can numb the tooth immediately and perform the necessary treatment (usually starting a root canal or extraction) to get you out of pain instantly.</p>
+      </>
+    ),
+    pricing: [
+      { item: "Emergency Exam", price: "£30" },
+      { item: "X-Ray", price: "£10" },
+      { item: "Root Canal (Start)", price: "from £247.50" },
+      { item: "Extraction", price: "from £125" },
+    ],
+    beforeAfter: beforeAfterImages.toothache,
+    seo: {
+      title: "Severe Toothache Relief London | Emergency Dentist",
+      description: "Stop tooth pain now. Same-day appointments for severe toothache in Central London. Open weekends.",
+      keywords: "toothache relief london, severe tooth pain, emergency dentist toothache, pulpitis treatment"
+    }
+  },
+  'c3': {
+    id: 'c3',
+    title: 'Swollen Gums / Abscess',
+    heroImage: "https://images.unsplash.com/photo-1628177142898-93e36e4e3a50?auto=format&fit=crop&w=1920&q=80",
+    content: (
+      <>
+        <p>Swelling in the gums or face usually indicates a bacterial infection or <strong>dental abscess</strong>. This is a serious condition that can spread to the jaw, neck, or even the bloodstream (sepsis) if left untreated.</p>
+        <p>Antibiotics alone are often not enough; the source of infection (the tooth) must be treated via drainage, root canal, or extraction.</p>
+      </>
+    ),
+    pricing: [
+      { item: "Emergency Exam", price: "£30" },
+      { item: "Abscess Drainage", price: "from £100" },
+      { item: "Antibiotics (if needed)", price: "£15" },
+      { item: "Root Canal", price: "from £247.50" },
+    ],
+    beforeAfter: beforeAfterImages.gum,
+    seo: {
+      title: "Dental Abscess Treatment London | Swollen Gums Emergency",
+      description: "Urgent treatment for dental abscesses and swollen gums. Prevent infection spread. Call for immediate drainage.",
+      keywords: "dental abscess london, swollen gums, gum infection, emergency dentist abscess"
+    }
+  },
+  'c4': {
+    id: 'c4',
+    title: 'Lost Crown or Filling',
+    heroImage: "https://images.unsplash.com/photo-1598256989337-1296b4859a2a?auto=format&fit=crop&w=1920&q=80",
+    content: (
+      <>
+        <p>Losing a crown or filling exposes the sensitive underlying tooth structure to air, temperature, and bacteria. This can cause sharp pain and allows decay to progress rapidly.</p>
+        <p>If you have the crown, bring it with you! We may be able to re-cement it. If not, we can place a temporary or new permanent restoration.</p>
+      </>
+    ),
+    pricing: [
+      { item: "Emergency Exam", price: "£30" },
+      { item: "Re-cement Crown", price: "from £65" },
+      { item: "Temporary Filling", price: "from £50" },
+      { item: "New Crown", price: "from £497.50" },
+    ],
+    beforeAfter: beforeAfterImages.crown,
+    seo: {
+      title: "Lost Crown Repair London | Emergency Dentist",
+      description: "Lost a filling or crown? We can re-cement or replace it same-day. Protect your tooth from further damage.",
+      keywords: "lost crown london, lost filling repair, recement crown, emergency dentist restoration"
+    }
+  },
+  'c5': {
+    id: 'c5',
+    title: 'Broken Denture',
+    heroImage: "https://images.unsplash.com/photo-1609840114035-1c29046a8af3?auto=format&fit=crop&w=1920&q=80",
+    content: (
+      <>
+        <p>A broken denture can affect your ability to eat and speak. Whether it is a clean break down the middle or a snapped clasp, do <strong>not</strong> use superglue to fix it, as this can make professional repair impossible.</p>
+        <p>We work with expert technicians who can often repair dentures within 24 hours.</p>
+      </>
+    ),
+    pricing: [
+      { item: "Denture Repair (Simple)", price: "from £95" },
+      { item: "Denture Repair (Complex)", price: "from £150" },
+      { item: "Addition of Tooth", price: "from £120" },
+      { item: "New Denture (Acrylic)", price: "from £397.50" },
+    ],
+    beforeAfter: beforeAfterImages.denture,
+    seo: {
+      title: "Emergency Denture Repair London | Same Day Fix",
+      description: "Broken denture? We offer fast denture repairs in Central London. Don't glue it, let us fix it professionally.",
+      keywords: "denture repair london, broken denture, fix false teeth, emergency dental lab"
+    }
+  },
+  'c6': {
+    id: 'c6',
+    title: 'Dental Injury / Soft Tissue',
+    heroImage: "https://images.unsplash.com/photo-1598256989337-1296b4859a2a?auto=format&fit=crop&w=1920&q=80",
+    content: (
+      <>
+        <p>Injuries to the lips, cheeks, or tongue can bleed heavily and be very distressing. This category also includes orthodontic emergencies, like snapped wires cutting the cheek.</p>
+        <p>We can provide sutures (stitches), smooth sharp teeth, or clip orthodontic wires to make you comfortable and aid healing.</p>
+      </>
+    ),
+    pricing: [
+      { item: "Emergency Exam", price: "£30" },
+      { item: "Sutures (Stitches)", price: "from £50" },
+      { item: "Smoothing Sharp Tooth", price: "from £50" },
+      { item: "Ortho Wire Adjustment", price: "from £50" },
+    ],
+    beforeAfter: beforeAfterImages.injury,
+    seo: {
+      title: "Dental Injury Treatment London | Cuts and Trauma",
+      description: "Emergency care for mouth injuries, cuts, and orthodontic emergencies in London. Call 020 3137 6356.",
+      keywords: "mouth injury london, dental stitches, cut lip dentist, orthodontic emergency"
+    }
+  }
+};
+
 interface ConditionDetailViewProps {
   conditionId: string;
   onBack: () => void;
   onOpenFees?: () => void;
   onSelectService?: (id: string) => void;
   onSelectCondition?: (id: string) => void;
+  onContactClick?: () => void;
+  onBlogClick?: () => void;
 }
 
 const ConditionDetailView: React.FC<ConditionDetailViewProps> = ({ 
@@ -321,7 +272,9 @@ const ConditionDetailView: React.FC<ConditionDetailViewProps> = ({
   onBack,
   onOpenFees,
   onSelectService,
-  onSelectCondition
+  onSelectCondition,
+  onContactClick,
+  onBlogClick
 }) => {
   const { openBooking } = useBooking();
   const condition = conditionData[conditionId];
@@ -363,6 +316,9 @@ const ConditionDetailView: React.FC<ConditionDetailViewProps> = ({
         onOpenFees={onOpenFees}
         onSelectService={onSelectService}
         onSelectCondition={onSelectCondition}
+        onContactClick={onContactClick}
+        onBlogClick={onBlogClick}
+        variant="overlay"
       />
 
       {/* Hero Section */}

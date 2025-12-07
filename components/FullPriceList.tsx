@@ -10,6 +10,7 @@ interface FullPriceListProps {
   onSelectService?: (id: string) => void;
   onSelectCondition?: (id: string) => void;
   onContactClick?: () => void;
+  onBlogClick?: () => void;
 }
 
 interface PriceItem {
@@ -75,7 +76,8 @@ const FullPriceList: React.FC<FullPriceListProps> = ({
   onOpenFees,
   onSelectService,
   onSelectCondition,
-  onContactClick
+  onContactClick,
+  onBlogClick
 }) => {
   const { openBooking } = useBooking();
 
@@ -94,6 +96,8 @@ const FullPriceList: React.FC<FullPriceListProps> = ({
         onSelectService={onSelectService}
         onSelectCondition={onSelectCondition}
         onContactClick={onContactClick}
+        onBlogClick={onBlogClick}
+        variant="overlay"
       />
 
       {/* Hero Section */}

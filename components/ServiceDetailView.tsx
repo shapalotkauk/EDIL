@@ -195,6 +195,8 @@ interface ServiceDetailViewProps {
   onOpenFees?: () => void;
   onSelectService?: (id: string) => void;
   onSelectCondition?: (id: string) => void;
+  onContactClick?: () => void;
+  onBlogClick?: () => void;
 }
 
 const ServiceDetailView: React.FC<ServiceDetailViewProps> = ({ 
@@ -202,7 +204,9 @@ const ServiceDetailView: React.FC<ServiceDetailViewProps> = ({
   onBack,
   onOpenFees,
   onSelectService,
-  onSelectCondition
+  onSelectCondition,
+  onContactClick,
+  onBlogClick
 }) => {
   const { openBooking } = useBooking();
   const service = serviceData[serviceId];
@@ -220,6 +224,9 @@ const ServiceDetailView: React.FC<ServiceDetailViewProps> = ({
         onOpenFees={onOpenFees}
         onSelectService={onSelectService}
         onSelectCondition={onSelectCondition}
+        onContactClick={onContactClick}
+        onBlogClick={onBlogClick}
+        variant="overlay"
       />
 
       {/* Hero Section */}

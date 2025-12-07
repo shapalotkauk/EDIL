@@ -10,6 +10,7 @@ interface ContactPageProps {
   onSelectService?: (id: string) => void;
   onSelectCondition?: (id: string) => void;
   onContactClick?: () => void;
+  onBlogClick?: () => void;
 }
 
 const ContactPage: React.FC<ContactPageProps> = ({ 
@@ -17,7 +18,8 @@ const ContactPage: React.FC<ContactPageProps> = ({
   onOpenFees,
   onSelectService,
   onSelectCondition,
-  onContactClick
+  onContactClick,
+  onBlogClick
 }) => {
   const { openBooking } = useBooking();
 
@@ -34,6 +36,8 @@ const ContactPage: React.FC<ContactPageProps> = ({
         onSelectService={onSelectService}
         onSelectCondition={onSelectCondition}
         onContactClick={onContactClick}
+        onBlogClick={onBlogClick}
+        variant="overlay"
       />
 
       {/* Hero Section */}

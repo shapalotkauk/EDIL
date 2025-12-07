@@ -8,6 +8,7 @@ interface HeaderProps {
   onSelectCondition?: (id: string) => void;
   onContactClick?: () => void;
   onBlogClick?: () => void;
+  variant?: 'default' | 'overlay'; // default = dark text (for light bg), overlay = white text (for dark bg)
 }
 
 const treatmentsList = [
@@ -33,7 +34,8 @@ const Header: React.FC<HeaderProps> = ({
   onSelectService, 
   onSelectCondition, 
   onContactClick,
-  onBlogClick 
+  onBlogClick,
+  variant = 'default' 
 }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -103,10 +105,42 @@ const Header: React.FC<HeaderProps> = ({
     window.scrollTo(0,0);
   }
 
+  // Determine styles based on state
+  const isSolid = isScrolled || mobileMenuOpen;
+  
+  // Text Colors
+  // If solid (scrolled or menu open): Always dark slate
+  // If transparent: 
+  //    - variant='overlay' (Inner pages) -> White
+  //    - variant='default' (Home) -> Slate
+  const textColorClass = isSolid 
+    ? 'text-slate-600 hover:text-medical-600' 
+    : variant === 'overlay' 
+      ? 'text-white/90 hover:text-white' 
+      : 'text-slate-600 hover:text-medical-600';
+
+  const logoTitleClass = isSolid 
+    ? 'text-slate-900' 
+    : variant === 'overlay' 
+      ? 'text-white' 
+      : 'text-slate-900';
+
+  const logoSubtitleClass = isSolid
+    ? 'text-medical-600'
+    : variant === 'overlay'
+      ? 'text-medical-200'
+      : 'text-medical-700';
+
+  const logoBgClass = isSolid
+    ? 'bg-medical-600 text-white'
+    : variant === 'overlay'
+      ? 'bg-white text-medical-600'
+      : 'bg-medical-600 text-white';
+
   return (
     <header 
       className={`fixed w-full z-50 transition-all duration-300 ${
-        isScrolled ? 'bg-white/95 backdrop-blur-md shadow-md py-2' : 'bg-transparent py-4'
+        isSolid ? 'bg-white/95 backdrop-blur-md shadow-md py-2' : 'bg-transparent py-4'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -115,12 +149,12 @@ const Header: React.FC<HeaderProps> = ({
           {/* Logo */}
           <div className="flex items-center">
             <a href="#" onClick={goHome} className="flex items-center gap-2">
-                <div className="bg-medical-600 text-white p-2 rounded-lg">
+                <div className={`p-2 rounded-lg transition-colors ${logoBgClass}`}>
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
                 </div>
                 <div className="flex flex-col">
-                    <span className={`font-bold text-xl leading-none ${isScrolled ? 'text-slate-900' : 'text-slate-900'}`}>London Emergency</span>
-                    <span className={`text-sm font-medium tracking-wider uppercase ${isScrolled ? 'text-medical-600' : 'text-medical-700'}`}>Dentist</span>
+                    <span className={`font-bold text-xl leading-none transition-colors ${logoTitleClass}`}>London Emergency</span>
+                    <span className={`text-sm font-medium tracking-wider uppercase transition-colors ${logoSubtitleClass}`}>Dentist</span>
                 </div>
             </a>
           </div>
@@ -130,7 +164,7 @@ const Header: React.FC<HeaderProps> = ({
             
             {/* Mega Menu Dropdown */}
             <div className="relative group">
-                <button className="flex items-center text-slate-600 hover:text-medical-600 font-medium transition cursor-pointer py-2">
+                <button className={`flex items-center font-medium transition cursor-pointer py-2 ${textColorClass}`}>
                     Treatments <ChevronDown className="w-4 h-4 ml-1 group-hover:rotate-180 transition-transform duration-200" />
                 </button>
                 <div className="absolute top-full left-1/2 -translate-x-1/2 w-[500px] bg-white shadow-xl rounded-xl border border-gray-100 overflow-hidden hidden group-hover:block transition-all duration-200 transform origin-top">
@@ -177,12 +211,12 @@ const Header: React.FC<HeaderProps> = ({
                 </div>
             </div>
 
-            <button onClick={handleFeesClick} className="text-slate-600 hover:text-medical-600 font-medium transition cursor-pointer">Fees</button>
-            <button onClick={handleContactLinkClick} className="text-slate-600 hover:text-medical-600 font-medium transition cursor-pointer">Contact Us</button>
-            <button onClick={handleBlogLinkClick} className="text-slate-600 hover:text-medical-600 font-medium transition cursor-pointer">Blog</button>
+            <button onClick={handleFeesClick} className={`font-medium transition cursor-pointer ${textColorClass}`}>Fees</button>
+            <button onClick={handleContactLinkClick} className={`font-medium transition cursor-pointer ${textColorClass}`}>Contact Us</button>
+            <button onClick={handleBlogLinkClick} className={`font-medium transition cursor-pointer ${textColorClass}`}>Blog</button>
             
             <div className="flex items-center gap-3 ml-2">
-                 <a href="tel:02031376356" className="flex items-center text-urgent-600 font-bold hover:text-urgent-700 transition">
+                 <a href="tel:02031376356" className={`flex items-center font-bold transition ${isSolid ? 'text-urgent-600 hover:text-urgent-700' : variant === 'overlay' ? 'text-white hover:text-urgent-200' : 'text-urgent-600 hover:text-urgent-700'}`}>
                     <Phone className="w-4 h-4 mr-2" />
                     020 3137 6356
                  </a>
@@ -203,7 +237,7 @@ const Header: React.FC<HeaderProps> = ({
             </a>
             <button 
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                className="text-slate-600 hover:text-slate-900"
+                className={`transition-colors ${textColorClass}`}
             >
                 {mobileMenuOpen ? <X className="w-8 h-8" /> : <Menu className="w-8 h-8" />}
             </button>
