@@ -26,7 +26,6 @@ const Footer: React.FC = () => (
       <div>
         <h4 className="text-lg font-bold mb-4">Contact</h4>
         <p className="text-medical-200 text-sm">020 3137 6356</p>
-        <p className="text-medical-200 text-sm">info@emergencydentist.london</p>
         <p className="text-medical-200 text-sm mt-2">20 Old Brompton Rd, SW7 3DL</p>
       </div>
     </div>

@@ -103,17 +103,6 @@ const ContactPage: React.FC<ContactPageProps> = ({
                                 <p className="text-sm text-slate-400 mt-1">Available for emergency triage</p>
                             </div>
                         </li>
-                        <li className="flex items-start">
-                            <div className="flex-shrink-0 bg-blue-100 p-3 rounded-lg text-blue-600">
-                                <Mail className="w-6 h-6" />
-                            </div>
-                            <div className="ml-4">
-                                <h4 className="text-lg font-bold text-slate-900">Email</h4>
-                                <p className="text-slate-600 mt-1">
-                                    info@emergencydentist.london
-                                </p>
-                            </div>
-                        </li>
                     </ul>
                 </div>
 
